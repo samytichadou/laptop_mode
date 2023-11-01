@@ -16,6 +16,12 @@ class LAPTOPMODE_PT_general_popover(bpy.types.Panel):
 
         col = layout.column(align=True)
 
+        row = col.row(align=True)
+        row.operator("wm.save_mainfile", text="Save")
+        row.separator()
+        row.operator("ed.undo", text="Undo", icon="LOOP_BACK")
+        row.operator("ed.redo", text="Redo", icon="LOOP_FORWARDS")
+        col.separator()
         col.prop(prefs.view, "ui_scale")
         col.separator()
         col.prop(prefs.inputs, "use_emulate_numpad")
